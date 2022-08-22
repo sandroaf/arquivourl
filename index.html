@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Carregando Arquivos</title>
+</head>
+<body>
+    <h1>Arquivo</h1>
+    URL:<input type="text" id="iUrl" placeholder="url"> 
+    <input type="button" id="bAbrir" value="Abrir">
+    <br>
+    <div>
+        <textarea id="tArquivo"></textarea>
+    </div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+   $(document).ready(function() { 
+    console.log($("#bAbrir").val());
+      $("#bAbrir").click(function() {
+        console.log("carregando");
+        $.ajax({url: $("#iUrl").val(), success: function(conteudo){
+        $("#tArquivo").val(conteudo);
+        }, error: function(xhr){
+           alert("Ocorreu um erro: " + xhr.status + " " + xhr.statusText);
+        }});
+      });   
+    });   
+</script>
+
+</html>
