@@ -20,9 +20,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
    $(document).ready(function() { 
-    console.log($("#bAbrir").val());
+    //console.log($("#bAbrir").val());
       $("#bAbrir").click(function() {
-        console.log("carregando");
+        //console.log("carregando");
         $.ajax({url: $("#iUrl").val(), success: function(conteudo){
         $("#tArquivo").val(conteudo);
         }, error: function(xhr){
